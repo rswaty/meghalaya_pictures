@@ -2,7 +2,7 @@
 
 ## deal with iThing images
 
-# example URL https://raw.githubusercontent.com/rswaty/meghalaya_pictures/main/images/finn_and_pepper.jpg
+# example URL https://raw.githubusercontent.com/rswaty/meghalaya_pictures/main/images/goodbye_mqt.jpg
 
 
 #install.packages("magick")
@@ -99,7 +99,7 @@ convert_heic_to_jpg <- function(
 
 ## rotate an image -----
 
-image_read("images/finn_and_pepper.jpg") |>
+image_read("images/goodbye_mqt.jpg") |>
   image_rotate(-90) |>
   image_write("images/finn_and_pepper.jpg", quality = 88)
 
