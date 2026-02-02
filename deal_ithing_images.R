@@ -2,7 +2,7 @@
 
 ## deal with iThing images
 
-# example URL https://raw.githubusercontent.com/rswaty/meghalaya_pictures/main/images/goodbye_mqt.jpg
+# example URL https://raw.githubusercontent.com/rswaty/meghalaya_pictures/main/images/finn_and_pepper.jpg
 
 
 # ============================================================
@@ -74,7 +74,7 @@ message("All HEIC files converted and resized.")
 
 ## rotate an image -----
 
-image_read("images/goodbye_mqt.jpg") |>
+image_read("images/finn_and_pepper.jpg") |>
   image_rotate(-90) |>
   image_write("images/finn_and_pepper.jpg", quality = 88)
 
