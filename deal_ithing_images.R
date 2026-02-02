@@ -5,96 +5,71 @@
 # example URL https://raw.githubusercontent.com/rswaty/meghalaya_pictures/main/images/goodbye_mqt.jpg
 
 
-#install.packages("magick")
-library(fs)
-library(magick)
-
-# deal with images renamed .jpg, but are not really jpps
-jpgs <- dir_ls("images", regexp = "\\.jpg$", recurse = FALSE)
-
-file_type <- function(f) {
-  system2("file", args = c("-b", shQuote(f)), stdout = TRUE)
-}
-
-types <- vapply(jpgs, file_type, character(1))
-
-heic_disguised <- jpgs[grepl("HEIF|HEIC", types, ignore.case = TRUE)]
-
-heic_disguised
-length(heic_disguised)
-
-#convert the false .jpgs
-
-library(fs)
-
-for (f in heic_disguised) {
-  
-  tmp <- paste0(f, ".converted.jpg")
-  
-  res <- system2(
-    "heif-convert",
-    args = c(shQuote(f), shQuote(tmp)),
-    stdout = TRUE,
-    stderr = TRUE
-  )
-  
-  if (file_exists(tmp)) {
-    file_move(tmp, f)  # overwrite the fake jpg with a real jpg
-    message("Converted: ", path_file(f))
-  } else {
-    warning("Failed: ", f, "\n", paste(res, collapse = "\n"))
-  }
-}
-
-
-# resize for storymaps
-
-imgs <- dir_ls("images", regexp = "\\.jpg$")
-
-for (f in imgs) {
-  image_read(f) |>
-    image_resize("2400x2400>") |>
-    image_write(f, quality = 88)
-}
-
-## for true .heic
+# ============================================================
+# R Script: HEIC -> JPG -> Resize for StoryMapJS
+# ============================================================
 
 library(fs)
 library(magick)
 
-convert_heic_to_jpg <- function(
-    heic_file,
-    max_dim = 2400,
-    quality = 88
-) {
-  stopifnot(file_exists(heic_file))
-  stopifnot(tolower(path_ext(heic_file)) == "heic")
+# -----------------------------
+# CONFIG
+# -----------------------------
+img_dir  <- "images"     # folder containing HEIC files
+max_dim  <- 2400         # maximum long edge for StoryMapJS
+quality  <- 88           # JPEG quality
+recursive <- TRUE        # find HEICs in subfolders too?
+
+# -----------------------------
+# 1. Find all HEIC files
+# -----------------------------
+heics <- dir_ls(img_dir,
+                recurse = recursive,
+                regexp = "\\.HEIC$|\\.heic$")
+
+if (length(heics) == 0) {
+  stop("No HEIC files found in ", img_dir)
+}
+
+message("Found ", length(heics), " HEIC files.")
+
+# -----------------------------
+# 2. Conversion + resize
+# -----------------------------
+for (heic_file in heics) {
   
-  # Output JPG path (same folder, same base name)
+  # Output JPG path (same folder, same basename)
   jpg_file <- path_ext_set(heic_file, "jpg")
   
-  # ---- HEIC -> JPG (via libheif) ----
+  message("Converting: ", path_file(heic_file), " -> ", path_file(jpg_file))
+  
+  # ---- HEIC -> JPG using heif-convert ----
+  tmp_file <- paste0(jpg_file, ".converted.jpg")
   res <- system2(
     "heif-convert",
-    args = c(shQuote(heic_file), shQuote(jpg_file)),
+    args = c(shQuote(heic_file), shQuote(tmp_file)),
     stdout = TRUE,
     stderr = TRUE
   )
   
-  if (!file_exists(jpg_file)) {
-    stop(
-      "HEIC conversion failed for ", heic_file, "\n",
-      paste(res, collapse = "\n")
-    )
+  if (!file_exists(tmp_file)) {
+    warning("Conversion failed for ", heic_file, "\n", paste(res, collapse = "\n"))
+    next
   }
+  
+  # Overwrite final JPG
+  file_move(tmp_file, jpg_file)
   
   # ---- Resize for StoryMapJS ----
   img <- image_read(jpg_file)
   img <- image_resize(img, paste0(max_dim, "x", max_dim, ">"))
   image_write(img, jpg_file, quality = quality)
   
-  invisible(jpg_file)
+  message("Done: ", path_file(jpg_file))
 }
+
+message("All HEIC files converted and resized.")
+
 
 
 ## rotate an image -----
