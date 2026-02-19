@@ -78,6 +78,35 @@ image_read("images/finn_and_pepper.jpg") |>
   image_rotate(-90) |>
   image_write("images/finn_and_pepper.jpg", quality = 88)
 
+library(magick)
+
+img_file <- "images/finn_and_pepper.jpg"
+
+img <- image_read(img_file)
+
+# Read EXIF orientation
+exif <- image_attributes(img)[["exif:Orientation"]]
+
+# Rotate based on common EXIF orientation values
+if (!is.null(exif)) {
+  exif <- as.integer(exif)
+  if (exif == 6) {        # 90° clockwise
+    img <- image_rotate(img, 90)
+  } else if (exif == 8) { # 90° counterclockwise
+    img <- image_rotate(img, -90)
+  } else if (exif == 3) { # 180°
+    img <- image_rotate(img, 180)
+  }
+}
+
+# Resize for StoryMapJS
+img <- image_resize(img, "2400x2400>")
+
+# Overwrite file
+image_write(img, img_file, quality = 88)
+
+
+
 
 
 

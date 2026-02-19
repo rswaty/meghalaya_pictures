@@ -1,0 +1,56 @@
+---
+title: "TNC-focused storymap outline and text"
+format: html
+---
+
+## Goals
+
+1. Make TNC look good-science coda, work with NESFAS
+2. Explain the region, jhum and situation (food security, threats, opportunities)
+3. Talk about the future of jhum and conservation there
+
+
+## Intro (landscape picture)
+
+In September 2026, Nature Conservancy colleague Siddarth Machado (https://www.linkedin.com/in/siddarth-machado-ph-d-533432266/) and I were selected for a Science Coda Fellowship titled "Strengthening community conservation for climate, biodiversity and livelihoods in Northeast India".  As part of the fellowship we had the opportunity to visit Meghalaya.  Here I will share a bit about the geography, agricultural practices and the challenges and opportunities we're uncovering.
+
+## Northeast India (NE India Map; point focused on the middle of the region)
+
+Northeastern India is a compact but diverse region of about 263,000 square kilometers—roughly 8% of India’s land area—comprising eight states: Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Tripura, and Sikkim. The region is defined by rugged mountain ranges, steep hills, and narrow valleys, with the Brahmaputra River and its floodplains anchoring the lowlands of Assam. High rainfall, dense forests, and complex terrain make the area one of India’s most ecologically rich and geographically dynamic regions, linking the eastern Himalaya with Southeast Asia.
+
+
+## Meghalaya (Meghalaya map-topo?; point focused on central Meghalaya)
+
+Meghalaya is a small but geographically striking state in northeastern India, covering about 22,400 square kilometers within the broader region of eight northeastern states. Much of Meghalaya forms an elevated plateau rising sharply from the Assam plains, dissected by deep river gorges and steep escarpments. The southern slopes receive some of the highest rainfall on Earth, feeding dense forests, waterfalls, and an extensive network of caves, while the plateau surface supports rolling uplands and fertile valleys. This combination of height, rainfall, and rugged terrain gives Meghalaya a landscape that is both ecologically rich and physically dramatic despite its relatively small size.
+
+## Garo and Khasi (picture of people-perhaps the Khasi site)
+
+The people of Meghalaya are largely Indigenous, with the Garo and Khasi as the two largest tribal groups, both of whom traditionally practice jhum (shifting cultivation). Each community is matrilineal, with land rights, clan identity, and inheritance passed through women, strongly influencing social structure and resource management. The Garo, mainly in the western hills, and the Khasi, across the central and eastern plateau, have long adapted jhum farming to steep slopes, heavy rainfall, and forested landscapes. These shared agricultural traditions reflect a deep connection between culture, land use, and Meghalaya’s distinctive geography.
+
+## Traditional jhum (picture of market-get point from image)
+
+Traditional jhum (shifting cultivation) in Meghalaya is a long-established land-use system closely adapted to steep terrain, high rainfall, and forested landscapes. Farmers clear small forest patches, burn vegetation to enrich soils, and cultivate diverse crops such as rice, millets, medicinal plants and vegetables before allowing the land to lie fallow and regenerate. Practiced by communities such as the Garo and Khasi, jhum emphasizes crop diversity, local ecological knowledge, and cyclical use of land rather than permanent fields. When fallow periods are sufficient, it functions as a resilient system linking food production, forest recovery, and cultural tradition.
+
+## Current challenges (Khasi site; landscape image)
+
+While there are people still practicing traditional jhum with relativity long fallow periods, there are also challenges that are leading to reduced fallow periods among other things:
+
+* Increased economic pressures (and incentives) leading to increased conversion to plantations (e.g., areca nut)
+* Loss of knowledge and labor as elders pass, youth move to cities seeking greater opportunities and spiritual practices shift 
+* Sale of land to 'outsiders' that typically do not practice shifting cultivation (note: this is not super common due to land ownership patters)
+
+Additionally, lifestyle changes are altering jhum practice.  For example, people are building more permanent houses so that children can attend schools.  This means the families are not "ranging" as far, effectively reducing the jhum footprint.
+
+## The Nature Conservancy's collaboration with NESFAS
+
+Partially due to laws in India regarding funding of non-profits, and the efficiencies of working with partners there, TNC is collaborating with [NESFAS (North East Society for Agroecology Support)](https://nesfas.in/) to take on agriculture-focused conservation strategies such as updating People's Biodiversity Registers (exhaustive documentation about species diversity within a landscape. See [video](https://www.youtube.com/watch?v=EBxjWD6olE8)), implementing Agricultural Learning Circles (learn about award they recieved for this work [here](Agroecology Learning Circles)) and support of Indigenous farming systems. 
+
+## Why care about jhum?
+
+We care about jhum because it sits at the intersection of biodiversity conservation and food security in Meghalaya and across northeastern India. Traditional jhum systems maintain a mosaic of fields, fallows, and regenerating forests that can support high plant, insect, and wildlife diversity compared to uniform monocultures. The wide mix of crops grown in jhum fields enhances dietary diversity and reduces the risk of total crop failure, strengthening household food security in a region prone to extreme rainfall and climate variability. Where fallow cycles are maintained, jhum can function as a dynamic agroecological system that supports both ecological resilience and local livelihoods.
+
+## Visit to Dewliah
+
+Our first field visit was to Dewliah, Meghalaya in the east Khasi Hills region.  Here we 
+
+
